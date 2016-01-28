@@ -1,25 +1,18 @@
 #__author__ = 'colleen'
 # coding=utf-8
-# ����
 import re
-# ���罻��
-import requests
-# ����ϵͳ����
 import os
 
-# ����һ����
+import requests
+
+
 class Spider:
-    #����һ������
     def savePageInfo(self, _url, _position, _regX):
 
-        # Ҫ������ַ
         url = _url
-        # ���ص�ַ
         position = _position
-        # ��ȡ��ҳԴ����
         html = requests.get(url).text
 
-        # ����
         regX = _regX
 
         pic_url = re.findall(regX,html,re.S)

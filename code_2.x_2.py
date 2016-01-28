@@ -25,6 +25,6 @@ def getImg(html):
     print u'图片完成下载，保存路径为'+filepath
 
 
-html = getHtml("http://tieba.baidu.com/p/4178073660")
+html = getHtml("http://tieba.baidu.com/p/4090435619")
 
 print getImg(html)
