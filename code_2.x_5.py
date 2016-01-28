@@ -1,10 +1,12 @@
 #__author__ = 'colleen'
 #!/usr/bin/env python
 #coding=utf-8
-import urllib
 import urllib2
 import re
+
 import pymongo
+
+
 def getHtml(url):
     page=urllib2.urlopen(url)
     html=page.read()

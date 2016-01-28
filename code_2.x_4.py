@@ -1,25 +1,25 @@
 #__author__ = 'colleen'
-#-*-coding:utf-8-*-
-# ÕýÔò
+# coding=utf-8
+# ï¿½ï¿½ï¿½ï¿½
 import re
-# ÍøÂç½»»¥
+# ï¿½ï¿½ï¿½ç½»ï¿½ï¿½
 import requests
-# ²Ù×÷ÏµÍ³¹¦ÄÜ
+# ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½
 import os
 
-# ¶¨ÒåÒ»¸öÀà
+# ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½
 class Spider:
-    #¶¨ÒåÒ»¸öº¯Êý
+    #ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     def savePageInfo(self, _url, _position, _regX):
 
-        # ÒªÅÀµÄÍøÖ·
+        # Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
         url = _url
-        # ±¾µØµØÖ·
+        # ï¿½ï¿½ï¿½Øµï¿½Ö·
         position = _position
-        # »ñÈ¡ÍøÒ³Ô´´úÂë
+        # ï¿½ï¿½È¡ï¿½ï¿½Ò³Ô´ï¿½ï¿½ï¿½ï¿½
         html = requests.get(url).text
 
-        # ÕýÔò
+        # ï¿½ï¿½ï¿½ï¿½
         regX = _regX
 
         pic_url = re.findall(regX,html,re.S)
@@ -29,7 +29,7 @@ class Spider:
 
             pic = requests.get( each )
             print  url + each
-            # Èç¹ûÎÄ¼þ¼Ð²»´æÔÚ£¬Ôò´´½¨Ò»¸öÎÄ¼þ¼Ð
+            # ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½Ú£ï¿½ï¿½ò´´½ï¿½Ò»ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
             if not os.path.isdir(position):
 
                 os.makedirs(position)
@@ -41,19 +41,19 @@ class Spider:
             i+=1
 
 
-#£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½ÍøÒ³ÅÀÈ¡Í¼Æ¬£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½È¡Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 position_end = ''
 
-# ÒªÅÀµÄÍøÖ·
+# Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·
 url = 'http://tieba.baidu.com/p/3590998005' + position_end
 
-# ±¾µØµØÖ·
+# ï¿½ï¿½ï¿½Øµï¿½Ö·
 position = '/Users/edison/Desktop/1/' + position_end
 
-# ÕýÔò
+# ï¿½ï¿½ï¿½ï¿½
 regX = '_blank\'><img src=(.*?) t'
 
-#²ÎÊý url, ´¢´æÎ»ÖÃ, ÅÀÈ¡µÄÕýÔò
+#ï¿½ï¿½ï¿½ï¿½ url, ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½, ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 spider = Spider()
 spider.savePageInfo(url, position, regX)
