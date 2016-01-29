@@ -20,11 +20,11 @@ def getContent(html):
     contentlist=contentre.findall(html)
     return contentlist
 
-def getConnection(): #ÄÃµ½Êý¾Ý¿âÁ¬½Ó
+def getConnection(): #ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
     conn=pymongo.Connection('localhost',27017)
     return conn
 
-def saveToDB(contentlist): #´æ´¢ÖÁmongodbÊý¾Ý¿âÖÐ
+def saveToDB(contentlist): #ï¿½æ´¢ï¿½ï¿½mongodbï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½
     conn=getConnection()
     db=conn.db
     t_movie=db.t_movie
