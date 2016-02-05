@@ -1,5 +1,6 @@
 #__author__ = 'colleen'
 # coding=utf-8
+'''the url http://www.umei.cc/ can't scan'''
 import re
 import os
 
@@ -8,11 +9,9 @@ import requests
 
 class Spider:
     def savePageInfo(self, _url, _position, _regX):
-
         url = _url
         position = _position
         html = requests.get(url).text
-
         regX = _regX
 
         pic_url = re.findall(regX,html,re.S)
@@ -23,7 +22,6 @@ class Spider:
             pic = requests.get(each)
             print url + each
             if not os.path.isdir(position):
-
                 os.makedirs(position)
 
             fp = open( position+str(i)+'.jpg', 'wb' )
@@ -32,14 +30,10 @@ class Spider:
             fp.close()
             i+=1
 
-
-
 position_end = ''
 
-url = 'http://tieba.baidu.com/p/3590998005' + position_end
-
+url = 'http://www.umei.cc/' + position_end
 position = '/Users/edison/Desktop/1/' + position_end
-
 regX = '_blank\'><img src=(.*?) t'
 
 spider = Spider()

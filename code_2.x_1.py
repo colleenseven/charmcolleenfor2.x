@@ -6,6 +6,8 @@ import re
 import os
 import urllib
 
+'''this is the first one'''
+
 url="http://tieba.baidu.com/p/4178073660"
 imgcontent=urllib.urlopen(url).read()
 reg = r'src="(http://imgsrc.baidu.com/forum/w%3D580.*?\.jpg)"'
