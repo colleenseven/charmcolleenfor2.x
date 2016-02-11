@@ -1,8 +1,9 @@
 #__author__ = 'colleen'
 import urllib
-from selenium import webdriver
 import os
-import BeautifulSoup
+
+from selenium import webdriver
+from bs4 import BeautifulSoup as BS
 
 base_dir = os.path.join(os.getcwd(), "nationalgeographic")
 if not os.path.exists(base_dir):
@@ -23,7 +24,7 @@ while previois_link:
     for url in urls:
         url = url["src"]
         filename = base_dir + '\\' + url.split('/')[-1]
-        urllib.urlretrieve(url, filename)
+        urllib.urlretrieve(url, base_dir + filename)
         print 'download', filename, 'to', base_dir
     previois_link = driver.find_element_by_partial_link_text('Previous')
     previois_link.click()
