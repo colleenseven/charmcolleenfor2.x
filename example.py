@@ -1,7 +1,2 @@
-# coding=utf-8
-import os
-
-import bs4
-
-print bs4.__file__
-print os.__file__
+for i in range(100):
+    print i
